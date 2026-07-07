@@ -1,0 +1,19 @@
+digraph "mux_4x1_nbit" {
+label="mux_4x1_nbit";
+rankdir="LR";
+remincross=true;
+n1 [ shape=diamond, label="s", color="black", fontcolor="black"];
+n2 [ shape=octagon, label="f", color="black", fontcolor="black"];
+n3 [ shape=octagon, label="a", color="black", fontcolor="black"];
+n4 [ shape=octagon, label="w3", color="black", fontcolor="black"];
+n5 [ shape=octagon, label="w2", color="black", fontcolor="black"];
+n6 [ shape=octagon, label="w1", color="black", fontcolor="black"];
+n7 [ shape=octagon, label="w0", color="black", fontcolor="black"];
+v0 [ label="1'x" ];
+x1 [shape=point, ];
+x2 [shape=point, ];
+x1:e -> n1:w [color="black", fontcolor="black", label=""];
+x2:e -> n2:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n7:e -> x2:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+v0:e -> x1:w [color="black", fontcolor="black", label=""];
+}
