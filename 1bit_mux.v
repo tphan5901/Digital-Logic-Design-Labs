@@ -3,7 +3,7 @@ module generic_1bit_mux
     #(parameter INS = 5)
 (
     input [INS - 1: 0] w,
-    input ($clog2(INS) - 1:0)s,
+    input [$clog2(INS) - 1:0]s,
     output reg f
 );
 
@@ -13,7 +13,7 @@ module generic_1bit_mux
     begin
         f = 'bx;
         for (k = 0; k < INS; k = k + 1)
-            if (k == a)
+            if (k == s)
                 f = w[k];
     end
 
