@@ -46,7 +46,7 @@ module adder_subtractor_4bit #(parameter n = 4)
         begin : bit
             assign xored_y[k] = y[k] ^ add_n;
         end
-        
+
     endgenerate
 
     // instead of generate block, you could xor the output with add_input * n times
@@ -71,6 +71,7 @@ module nbit_adder_subtractor #(parameter n = 4)
     input add_n,
     output [n - 1:0] a,
     output c_out,
+    //signed & unsigned num
     output overflow
 );
 

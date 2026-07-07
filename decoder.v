@@ -26,7 +26,7 @@ endmodule
 
 
 // 2 means two input, 4 means four output
-module decoder 2x4 (
+module decoder_using_if_statements (
     input [1:0] w,
     output reg [0:3] y
 );
@@ -52,7 +52,7 @@ module decoder 2x4 (
 endmodule
 
 //2x4 decoder using switch case statements
-module 2x4 decoder (
+module decoder_using_switchcase (
     input [1:0] w,
     output reg [0:3] y
     
@@ -78,7 +78,7 @@ endmodule
 
 //easiest impl of decoder
 //2x4 decoder
-module 2x4 decoder (
+module decoder (
     input [1:0] w,
     output reg [0:3] y
     
