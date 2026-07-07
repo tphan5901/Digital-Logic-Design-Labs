@@ -1,5 +1,5 @@
 
-module subtractor 
+module subtractor_4bit
 (
     input [3:0] x, y,
     input add_n,
@@ -46,6 +46,7 @@ module adder_subtractor_4bit #(parameter n = 4)
         begin : bit
             assign xored_y[k] = y[k] ^ add_n;
         end
+        
     endgenerate
 
     // instead of generate block, you could xor the output with add_input * n times
