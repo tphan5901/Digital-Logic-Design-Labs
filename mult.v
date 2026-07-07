@@ -1,5 +1,4 @@
 
-
 module mux_2x1_nbit 
     #(parameter N = 3)
 (
@@ -25,7 +24,7 @@ module mux_4x1_nbit
 (
     input [N - 1:0] w0, w1, w2, w3,
     input [1:0] a,
-    output [N - 1:0] f
+    output reg [N - 1:0] f
 );
 
 //    always @(w0, w1, w2, w3, a)
@@ -34,9 +33,9 @@ module mux_4x1_nbit
 
     //    f = s[1]?(s[0]? w3: w2):(s[0]? w1: w0);
     
-        if (s == 2'b00)
+        if (a == 2'b00)
             f = w0;
-        else if (s == 2'b01)
+        else if (a == 2'b01)
             f = w1;
         else if (a == 2'b10)
             f = w2;

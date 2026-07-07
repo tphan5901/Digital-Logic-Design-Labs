@@ -18,7 +18,7 @@ module D_latch (
             Q = Q;
     end
 
-end module
+endmodule
 
 
 module D_negative_flipflop(
@@ -29,11 +29,10 @@ module D_negative_flipflop(
 
     always @(negedge clk)
     begin
-        Q = D
+        Q = D;
     end
 
 endmodule
-
 
 
 module D_positive_flipflop(
@@ -44,7 +43,7 @@ module D_positive_flipflop(
 
     always @(posedge clk)
     begin
-        Q = D
+        Q = D;
     end
 
 endmodule

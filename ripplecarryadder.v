@@ -1,5 +1,4 @@
 
-
 module rca_4bit(
     input [3:0] x, y,
     input c_in,
@@ -36,9 +35,9 @@ module rca_4bit(
     full_adder FA3 (
         .x(x[3]),
         .y(y[3]),
-        .c_in(c_in),
+        .c_in(c[2]),
         .s(a[3]),
-        .c_out(c[3])
+        .c_out(c_out)
     );
 
-endModule
+endmodule

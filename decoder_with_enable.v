@@ -1,6 +1,6 @@
 
 //2x4 decoder w/ enable
-module 2x4 decoder (
+module decoder_2x4 (
     input [1:0] w,
     input en,
     output reg [0:3] y

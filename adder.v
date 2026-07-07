@@ -1,6 +1,6 @@
 
 module half_adder (
-    input a, y,
+    input x, y,
     output c, a
 );
 

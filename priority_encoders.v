@@ -37,7 +37,7 @@ module generic_priority_encoder_4x2_testbench();
         .y(y)
     );
     
-    initial #(10 * 2**N + 10) $finish;
+    initial #(10 * 2**4 + 10) $finish;
     
     initial
     begin   
