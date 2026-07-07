@@ -26,8 +26,8 @@ module subtractor
 endmodule
 
 
-#parametized
-module subtractor #(parameter n = 4)
+//parametized
+module adder_subtractor_4bit #(parameter n = 4)
 (
     input [n - 1:0] x, y,
     input add_n,
@@ -43,10 +43,13 @@ module subtractor #(parameter n = 4)
         genvar k;
 
         for (k = 0; k < n; k = k + 1)
-        begin: bit
+        begin : bit
             assign xored_y[k] = y[k] ^ add_n;
         end
     endgenerate
+
+    // instead of generate block, you could xor the output with add_input * n times
+    // assign xored_y = y ^ {n{add_n}}
 
     rca_nbit #(.n(n)) A0 (
         .x(x),
@@ -61,7 +64,7 @@ endmodule
 
 //parametized
 //add overflow
-module subtractor #(parameter n = 4)
+module nbit_adder_subtractor #(parameter n = 4)
 (
     input [n - 1:0] x, y,
     input add_n,
@@ -79,7 +82,7 @@ module subtractor #(parameter n = 4)
         genvar k;
 
         for (k = 0; k < n; k = k + 1)
-        begin: bit
+        begin : bit
             assign xored_y[k] = y[k] ^ add_n;
         end
     endgenerate
