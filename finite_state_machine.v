@@ -62,32 +62,35 @@ module pair_detect(
             state <= 2'b00;
         else
             begin
-                case(state)
-                2'b00:
-                begin
-                    if(inbits) state <= 2'b01;
-                    else state <= 2'b10;
 
-                end
+                case(state) 
+                    2'b00:
+                        begin
+                            if(inbits) state <= 2'b01;
+                            else state <= 2'b10;
+                        end
 
-                2'b01:
-                begin
-                    if (inbits) state <= 2'b11;
-                    else state <= 2'b10;
-                end
+                    2'b01:
+                        begin
+                            if (inbits) state <= 2'b11;
+                            else state <= 2'b10;
+                        end
 
-                2'b10:
-                begin
-                    if (inbits) state <= 2'b01;
-                    else state <= 2'b10;
-                end
+                    2'b10:
+                        begin
+                            if (inbits) state <= 2'b01;
+                            else state <= 2'b10;
+                        end
 
-                2'b11:
-                begin
-                    if (inbits) state <= 2'b01;
-                    else state <= 2'b10;
-                end
+                    2'b11:
+                        begin
+                            if (inbits) state <= 2'b01;
+                            else state <= 2'b10;
+                        end
 
+                // default block is unnecessary when there is init block that sets default to 2'b00
+                //    default: state <= 2'b00;
+                
                 endcase
                 
             end
