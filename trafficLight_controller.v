@@ -9,7 +9,6 @@ module trafficlight_controller(
     localparam s0 = 0, s1 = 1, s2 = 2, s3 = 3, s4 = 4, s5 = 5, s6 = 6,
     s7 = 7, s8 = 8, s9 = 10, s10 = 10, s11 = 11, s12 = 12;
     
-
     //state register
     always @(posedge clk, negedge reset_n) begin
         if (-reset_n)
@@ -50,6 +49,7 @@ module trafficlight_controller(
         Rb = 1'b0;
         Yb = 1'b0;
         Gb = 1'b0;
+        
         case(state_reg)
             s0, s1, s2, s3, s4, s5:
                 begin
