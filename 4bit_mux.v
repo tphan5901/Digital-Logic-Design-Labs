@@ -11,7 +11,7 @@ module mux_4x1_nbit #(parameter N = 3) (
 
     // f = s[1]?(s[0]? w3: w2):(s[0]? w1: w0);
 
-    // same output as line 33
+    // same output as line 12
         if (a == 2'b00)
             f = w0;
         else if (a == 2'b01)
@@ -24,7 +24,7 @@ module mux_4x1_nbit #(parameter N = 3) (
             f = 'bx; 
 
 
-    //same output as if else statement chain & line 33   
+    //same output as if else statement chain & line 12
     /*
         case(a)
             2'b00: f = w0;
@@ -32,7 +32,6 @@ module mux_4x1_nbit #(parameter N = 3) (
             2'b10: f = w2;
             2'b11: f = w3;
             default: f = 'bx;
-
         endcase
     */
     

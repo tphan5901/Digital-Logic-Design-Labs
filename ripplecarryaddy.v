@@ -55,7 +55,7 @@ module rca_4bit(
     full_adder FA1 (
         .x(x[1]),
         .y(y[1]),
-        .c_in(c_in),
+        .c_in(c[0]),
         .a(a[1]),
         .c_out(c[1])
     );
@@ -63,7 +63,7 @@ module rca_4bit(
     full_adder FA2 (
         .x(x[2]),
         .y(y[2]),
-        .c_in(c_in),
+        .c_in(c[1]),
         .a(a[2]),
         .c_out(c[2])
     );

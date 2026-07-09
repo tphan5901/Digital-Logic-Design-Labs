@@ -4,8 +4,8 @@ module half_adder (
     output c, a
 );
 
-    assign a = x ^ y;
-    assign c = x & y;
+    assign a = x ^ y; // x + y
+    assign c = x & y; // xy
 
 endmodule
 
@@ -24,7 +24,6 @@ module full_adder (
         .a(a1)
     );
 
-    
     half_adder HA1 (
         .x(c_in),
         .y(a1),

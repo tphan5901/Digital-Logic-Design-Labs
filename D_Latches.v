@@ -26,7 +26,7 @@ module D_negative_flipflop(
     output reg Q
 );
 
-    //negative clock signal
+    //negative clock signal (- sign)
     always @(negedge clk)
     begin
         Q = D;
