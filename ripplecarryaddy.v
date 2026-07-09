@@ -5,7 +5,6 @@ module half_adder (
 );
 
     assign a = x ^ y;
-
     assign c = x & y;
 
 endmodule
@@ -24,7 +23,6 @@ module full_adder (
         .a(a1)
     );
 
-    
     half_adder HA1 (
         .x(c_in),
         .y(a1),
@@ -35,6 +33,7 @@ module full_adder (
     assign c_out = c1 | c2;
 
 endmodule
+
 
 module rca_4bit(
     input [3:0] x, y,

@@ -19,7 +19,6 @@ module finite_state_machine(
     //combinational circuit
     always_comb begin
         case (current_state)
-
             A: if(x) next_state = C;
                 else next_state = B;
             B: if(x) next_state = D;
@@ -31,11 +30,9 @@ module finite_state_machine(
             E: if(x) next_state = D;
                 else next_state = B;
             default: next_state = A;
-
         endcase
 
         assign y = (current_state == D | current_state == E);
-
     end
 
 endmodule
@@ -62,7 +59,6 @@ module pair_detect(
             state <= 2'b00;
         else
             begin
-
                 case(state) 
                     2'b00:
                         begin
@@ -90,9 +86,7 @@ module pair_detect(
 
                 // default block is unnecessary when there is init block that sets default to 2'b00
                 //    default: state <= 2'b00;
-                
                 endcase
-                
             end
     end
 
