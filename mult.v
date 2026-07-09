@@ -1,14 +1,9 @@
 
-module mux_2x1_nbit 
-    #(parameter N = 3)
-(
-    
+module mux_2x1_nbit #(parameter N = 3) (
     input [N - 1: 0] w0, w1,
     input a,
     output reg [N - 1: 0] f
-
 );
-
 
 //    always @(w0, w1, a)
     always @(*)
@@ -19,9 +14,7 @@ module mux_2x1_nbit
 endmodule
 
 
-module mux_4x1_nbit 
-    #(parameter N = 3)
-(
+module mux_4x1_nbit #(parameter N = 3) (
     input [N - 1:0] w0, w1, w2, w3,
     input [1:0] a,
     output reg [N - 1:0] f

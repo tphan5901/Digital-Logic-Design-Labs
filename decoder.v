@@ -1,8 +1,6 @@
 
 //generic decoder
-module generic_decoder 
-    #(parameter N = 3) 
-(
+module generic_decoder #(parameter N = 3) (
     input [N - 1:0] w,
     //enable signal
     input en,

@@ -1,6 +1,5 @@
 
-module subtractor_4bit
-(
+module subtractor_4bit (
     input [3:0] x, y,
     input add_n,
     output [3:0] a,
@@ -27,8 +26,7 @@ endmodule
 
 
 //parametized
-module adder_subtractor_4bit #(parameter n = 4)
-(
+module adder_subtractor_4bit #(parameter n = 4) (
     input [n - 1:0] x, y,
     input add_n,
     output [n - 1:0] a,
@@ -39,13 +37,12 @@ module adder_subtractor_4bit #(parameter n = 4)
     wire [n - 1:0] xored_y;
 
     generate
-
         genvar k;
 
         for (k = 0; k < n; k = k + 1)
-        begin : bit
-            assign xored_y[k] = y[k] ^ add_n;
-        end
+            begin : bit
+                assign xored_y[k] = y[k] ^ add_n;
+            end
 
     endgenerate
 
@@ -65,8 +62,7 @@ endmodule
 
 //parametized
 //add overflow
-module nbit_adder_subtractor #(parameter n = 4)
-(
+module nbit_adder_subtractor #(parameter n = 4) (
     input [n - 1:0] x, y,
     input add_n,
     output [n - 1:0] a,
@@ -80,13 +76,12 @@ module nbit_adder_subtractor #(parameter n = 4)
 
     //generate several xor gates
     generate
-
         genvar k;
 
         for (k = 0; k < n; k = k + 1)
-        begin : bit
-            assign xored_y[k] = y[k] ^ add_n;
-        end
+            begin : bit
+                assign xored_y[k] = y[k] ^ add_n;
+            end
     endgenerate
 
     rca_nbit #(.n(n)) A0 (

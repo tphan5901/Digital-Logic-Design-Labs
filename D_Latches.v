@@ -1,5 +1,4 @@
 
-
 module D_latch (
     input D,
     input clk,
@@ -27,6 +26,7 @@ module D_negative_flipflop(
     output reg Q
 );
 
+    //negative clock signal
     always @(negedge clk)
     begin
         Q = D;
@@ -39,8 +39,8 @@ module D_positive_flipflop(
     input D,
     input clk,
     output reg Q
-);
-
+);  
+    //positive clock signal
     always @(posedge clk)
     begin
         Q = D;

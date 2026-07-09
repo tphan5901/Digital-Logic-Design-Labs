@@ -1,10 +1,8 @@
 
-module generic_1bit_mux 
-    #(parameter INS = 5)
-(
+module generic_1bit_mux #(parameter INS = 5) (
     input [INS - 1: 0] w,
     input [$clog2(INS) - 1:0]s,
-    output reg f
+    output reg f 
 );
 
     integer k;

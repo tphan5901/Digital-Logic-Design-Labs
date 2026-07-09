@@ -5,7 +5,6 @@ module half_adder (
 );
 
     assign a = x ^ y;
-
     assign c = x & y;
 
 endmodule
@@ -34,6 +33,5 @@ module full_adder (
     );
 
     assign c_out = c1 | c2;
-
 
 endmodule
