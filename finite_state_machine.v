@@ -91,10 +91,13 @@ module pair_detect(
     end
 
     always @(posedge clk, posedge reset) begin
+        // if reset then signal is 0
         if (reset) 
             detect <= 0;
+        // if second state then signal is 1
         else if (state == 2'b11)
             detect <= 1;
+        // else signal is 0
         else detect <= 0;
     end
 

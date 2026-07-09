@@ -1,7 +1,5 @@
 
-module adder_subtractor_testbench (
-
-);
+module adder_subtractor_testbench ();
     // 1. declare local reg * write identifier
     parameter n = 4;
     reg signed [n - 1 : 0] x, y;

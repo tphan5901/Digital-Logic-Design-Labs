@@ -1,5 +1,5 @@
 
-//generic decoder
+//generic decoder (hardest)
 module generic_decoder #(parameter N = 3) (
     input [N - 1:0] w,
     //enable signal
@@ -22,8 +22,7 @@ module generic_decoder #(parameter N = 3) (
 
 endmodule
 
-
-// 2 means two input, 4 means four output
+//2x4 using if statements
 module decoder_using_if_statements (
     input [1:0] w,
     output reg [0:3] y
@@ -49,7 +48,7 @@ module decoder_using_if_statements (
 
 endmodule
 
-//2x4 decoder using switch case statements
+//2x4 using switchcase
 module decoder_using_switchcase (
     input [1:0] w,
     output reg [0:3] y
@@ -73,21 +72,16 @@ module decoder_using_switchcase (
 
 endmodule
 
-
-//easiest impl of decoder
 //2x4 decoder
 module decoder (
     input [1:0] w,
-    output reg [0:3] y
-    
+    output reg [0:3] y    
 );
 
     always @(w)
         begin
-
             y = 4'b0000;
             y[w] = 1'b1;
-            
         end
 
 endmodule
