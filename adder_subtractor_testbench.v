@@ -7,7 +7,7 @@ module adder_subtractor_testbench ();
     wire signed [n - 1: 0] a;
     wire c_out, overflow;
 
-    // 2. instantiate module under test
+    // 2. call method
     adder_subtractor #(.n(n)) uut (
         .x(x),
         .y(y),

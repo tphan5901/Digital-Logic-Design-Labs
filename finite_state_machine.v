@@ -43,6 +43,7 @@ module pair_detect(
     input clk,
     input inbits,
     input reset,
+    //output register
     output reg detect
 );
 
@@ -103,3 +104,39 @@ module pair_detect(
 
 endmodule
 
+//testbench for pairdetect()
+module testbench;
+    reg clk;
+    reg reset;
+    reg nbits;
+    wire detect;
+
+    initial begin
+        reset = 1;
+        nbits = 0;
+
+        #15 reset = 0;
+
+        //random sequence
+        #20 nbits = 1;
+        #20 nbits = 0;
+        #20 nbits = 1;
+        #20 nbits = 0;
+        #20 nbits = 1;
+
+        #40 $finish;
+    end
+
+    initial begin
+        clk = 0;
+        forever #10 clk = ~clk;
+    end
+
+    pair_detect uut (
+        .clk(clk),
+        .inbits(nbits),
+        .reset(reset),
+        .detect(detect)
+    );
+    
+endmodule

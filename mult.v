@@ -26,6 +26,7 @@ module mux_4x1_nbit #(parameter N = 3) (
 
     //    f = s[1]?(s[0]? w3: w2):(s[0]? w1: w0);
     
+    // if statement chain equilvalent to ternary operator above
         if (a == 2'b00)
             f = w0;
         else if (a == 2'b01)

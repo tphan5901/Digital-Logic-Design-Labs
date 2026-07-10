@@ -1,5 +1,5 @@
 
-module priority_encoder_4x2  (
+module priority_encoder_switchcase_4x2  (
     input [3:0] w,
     output z,
     output reg [1:0] y
@@ -7,7 +7,7 @@ module priority_encoder_4x2  (
 
     assign z = |w;
 
-    always @(w)
+    always @(w) 
     begin
         y = 2'bxx;
 
@@ -24,7 +24,6 @@ endmodule
 
 
 module generic_priority_encoder_4x2_testbench();
-
     reg [3:0] w;
     wire z;
     wire [1:0] y;
@@ -45,6 +44,38 @@ module generic_priority_encoder_4x2_testbench();
         for(k = 0; k < 2**4 * 2; k = k + 1)
             #5 w = w + 1;
     end
-    
 
 endmodule
+
+
+module priority_encoder_4x2 (
+    //4 input
+    input [3:0] w,
+    output z,
+    //2 output
+    output reg [1:0] y
+);
+    assign z = |w;
+
+    always @(w)
+    begin
+        // non defined
+        y = 2'bxx;
+
+        //w[0-3] = 4 diff inputs, if any inputs active 
+        // select largest input from 11, 10, 01, 00
+        if (w[3])
+            y = 2'b11;
+        else if (w[2])
+            y = 2'b10;
+        else if (w[1])
+            y = 2'b01;
+        else if (w[0])
+            y = 2'b00;
+        else
+        // undefined
+            y = 2'bxx;
+    end
+
+endmodule
+

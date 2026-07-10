@@ -20,7 +20,7 @@ module decoder_2x4 (
                 2: y = 4'b0010;
                 3: y = 4'b0001;
                 default: y = 4'b0000;
-        endcase
+            endcase
         end
 
         else
