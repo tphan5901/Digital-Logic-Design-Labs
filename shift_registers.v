@@ -153,7 +153,8 @@ module universal_shift_register #(parameter N = 4)
 (
     input clk, reset_n,
     input [N - 1:0] I,
-    input [1:0] a,
+    // s can be either s1 or s0
+    input [1:0] s,
     input MSB_in, LSB_in,
     output [N - 1:0] Q,
 );
@@ -171,7 +172,7 @@ module universal_shift_register #(parameter N = 4)
     always @(Q_reg, MSB_in, LSB_in, I)
     begin
         Q_next = Q_reg
-        case(a)
+        case(s)
             2'b00: Q_next = Q_reg;
             2'b01: Q_next = (MSB_in, Q_reg[N - 1:0]);
             2'b10: Q_next = (Q_reg[N - 2:0], LSB_in);

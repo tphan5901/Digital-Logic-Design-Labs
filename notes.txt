@@ -1,0 +1,17 @@
+
+combinational vs sequential circuits
+
+combinational
+
+adders
+encoders
+decoders
+multiplexors
+
+
+sequential
+
+flipflops
+counters
+registers
+finite state machines

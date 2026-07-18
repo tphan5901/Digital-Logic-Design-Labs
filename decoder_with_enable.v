@@ -13,7 +13,6 @@ module decoder_2x4 (
         
         if (en)
         begin
-
             case(w)
                 0: y = 4'b1000;
                 1: y = 4'b0100;
