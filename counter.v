@@ -16,7 +16,7 @@ module timer_parameter #(parameter FINAL_VALUE = 255) (
     always @(posedge clk, negedge reset_n) begin
     // reset signal
         if (~reset_n)
-    // b0 means 00000000 so count is 0
+    // current reg count = b0 means 00000000 so count is 0
             Q_reg <= 'b0;
     // if enable signal, then start timer
         else if(enable)
@@ -35,7 +35,7 @@ module timer_parameter #(parameter FINAL_VALUE = 255) (
     //if else statement is equilvalent of ternary operator above
         if (done)
             Q_next = 0;
-        //keep incrementing the count
+        //keep incrementing count
         else
             Q_next = Q_reg + 1;
     end
