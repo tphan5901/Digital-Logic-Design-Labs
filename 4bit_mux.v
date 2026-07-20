@@ -1,17 +1,18 @@
 
 // 4 bit multiplexor
 module mux_4x1_nbit #(parameter N = 3) (
-    input [N - 1:0] w0, w1, w2, w3,
-    input [1:0] a,
+    input [N - 1:0] w0, w1, w2, w3, //system inputs
+    input [1:0] a, //outside inputs
     output reg [N - 1:0] f
 );
 
     always @(w0, w1, w2, w3, a)
     begin
-
+    
+    // ternary operator
     // f = s[1]?(s[0]? w3: w2):(s[0]? w1: w0);
 
-    // same output as line 12
+    // same output as ternary operator
         if (a == 2'b00)
             f = w0;
         else if (a == 2'b01)
@@ -24,7 +25,7 @@ module mux_4x1_nbit #(parameter N = 3) (
             f = 'bx; 
 
 
-    //same output as if else statement chain & line 12
+    //same output as ternary operator & if else chained statements
     /*
         case(a)
             2'b00: f = w0;

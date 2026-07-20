@@ -9,7 +9,7 @@ module half_adder (
 
 endmodule
 
-
+//full adder uses 2 half adders
 module full_adder (
     input x, y, c_in,
     output a, c_out
