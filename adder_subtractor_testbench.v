@@ -34,7 +34,9 @@ module adder_subtractor_testbench ();
         #10
 
         // 5 - 6
-        add_n = 1;
+        add_n = 1'b1;
+        x = 4'd5;
+        y = 4'd6;
 
         #10
 
@@ -55,7 +57,7 @@ module adder_subtractor_testbench ();
 
     // 5. display output response (text or graphic (or both))
     initial begin
-        $monitor("time = %2d: x = %2d \t y = %2d \t add_n = %b \t result = %2d \t cout = %b \t overflow = %b",
+        $monitor("time = %2d: x = %2d \t y = %2d \t add_n = %b \t result = %2d \t cout = %b \t overflow = %b", 
         $time, x, y, add_n, a, c_out, overflow);
     end
 
