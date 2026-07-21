@@ -27,7 +27,7 @@ module simple_register #(parameter N = 4)
 
 endmodule
 
-//harder implementation of a simple register
+//harder implementation of a simple register using connected d flipfliops
 module simple_register_harder_implementation #(parameter N = 4)
 (
     input clk,
@@ -35,7 +35,7 @@ module simple_register_harder_implementation #(parameter N = 4)
     output [N - 1:0] Q
 );
 
-    //create 4 connected D Flipflops using for loops
+    //create 4 connected d flipflops w/ for loops
     genvar k;
     generate
         for(k = 0; k < N; k = k + 1)

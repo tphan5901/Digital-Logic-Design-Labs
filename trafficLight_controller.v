@@ -2,18 +2,23 @@
 module trafficlight_controller(
     input clk, reset_n,
     input Sa, Sb,
-    output reg Ra, Ya, Ga,
-    output reg Rb, Yb, Gb
+//    output reg Ra, Ya, Ga,
+//    output reg Rb, Yb, Gb
+    // or
+    output reg Ra, Ya, Ga, Rb, Yb, Gb
 );
+
     reg[3:0] state_reg, state_next;
-    localparam s0 = 0, s1 = 1, s2 = 2, s3 = 3, s4 = 4, s5 = 5, s6 = 6,
-    s7 = 7, s8 = 8, s9 = 9, s10 = 10, s11 = 11, s12 = 12;
+    localparam s0 = 0, s1 = 1, s2 = 2, s3 = 3, s4 = 4, s5 = 5, 
+    s6 = 6, s7 = 7, s8 = 8, s9 = 9, s10 = 10, s11 = 11, s12 = 12;
     
-    //state register
     always @(posedge clk, negedge reset_n) begin
+        // if reset input
         if (~reset_n)
+                // inactive state
                 state_reg <= s0;
             else
+                // on state
                 state_reg <= state_next;
     end 
     
@@ -41,7 +46,7 @@ module trafficlight_controller(
 
     //output
     always @(*) begin
-    //lights at state 0
+    //lights in off state
         Ra = 1'b0;
         Ya = 1'b0;
         Ga = 1'b0;
@@ -52,6 +57,7 @@ module trafficlight_controller(
         case(state_reg)
             s0, s1, s2, s3, s4, s5:
                 begin
+                // on state
                     Ga = 1'b1;
                     Rb = 1'b1;
                 end
